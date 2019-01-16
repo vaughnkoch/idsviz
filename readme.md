@@ -27,3 +27,14 @@ jupyter notebook
 
 # Optional: add auto inline for matplotlib in Jupyter
 https://stackoverflow.com/questions/21176731/automatically-run-matplotlib-inline-in-ipython-notebook
+
+
+
+## Altair
+
+```
+%run altair_example.py
+```
+
+Altair Gallery:
+https://altair-viz.github.io/gallery/index.html

@@ -11,6 +11,8 @@ shap==0.18.1
 iml
 seaborn  # Useful in Jupyter, requires ipython imports
 
+
+
 # Debugging / tools
 progressbar2  # https://github.com/WoLpH/python-progressbar
 ipython
@@ -20,3 +22,10 @@ ipdb
 jupyter
 jupyter-nbextensions-configurator
 jupyterthemes
+
+
+# Altair
+altair
+vega_datasets
+notebook
+vega
