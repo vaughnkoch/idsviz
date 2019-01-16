@@ -24,13 +24,19 @@ https://stackoverflow.com/questions/21176731/automatically-run-matplotlib-inline
 
 ## Titanic
 
-This is from the famous [Kaggle Titanic challenge](https://www.kaggle.com/c/titanic/overview). 
+This is from the famous [Kaggle Titanic challenge](https://www.kaggle.com/c/titanic/overview).
 
 Some libraries:
 
+- Matplotlib - see below
 - Scikit-plot - https://scikit-plot.readthedocs.io/en/stable/
 - Shap (for feature importances) - https://github.com/slundberg/shap
 - XGBoost - one of the best gradient boosted trees - https://xgboost.readthedocs.io/en/latest/
+
+
+## Matplotlib
+
+- https://matplotlib.org/gallery.html
 
 
 ## Altair
