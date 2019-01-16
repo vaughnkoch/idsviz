@@ -1,0 +1,22 @@
+# Machine learning
+numpy
+scipy
+pandas
+xgboost
+
+# Graphics/dataviz
+matplotlib
+scikit-plot
+shap==0.18.1
+iml
+seaborn  # Useful in Jupyter, requires ipython imports
+
+# Debugging / tools
+progressbar2  # https://github.com/WoLpH/python-progressbar
+ipython
+ipdb
+
+# Notebook
+jupyter
+jupyter-nbextensions-configurator
+jupyterthemes
