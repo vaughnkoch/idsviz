@@ -36,18 +36,23 @@ Some libraries:
 
 ## Matplotlib
 
+- Main docs: https://matplotlib.org/index.html
 - https://matplotlib.org/gallery.html
 
 
 ## Altair
-- Main: https://altair-viz.github.io/index.html
+
+- Main docs: https://altair-viz.github.io/index.html
 - Gallery: https://altair-viz.github.io/gallery/index.html
+
 
 
 ## Seaborn
 
-https://seaborn.pydata.org/
-https://seaborn.pydata.org/examples/index.html
+- Main docs: https://seaborn.pydata.org/
+- Gallery: https://seaborn.pydata.org/examples/index.html
+
+
 
 ## Datamode
 
@@ -61,10 +66,13 @@ Datamode is an open source tool for data science visualization.
 
 
 ## Datasets
+
 https://github.com/vega/vega-datasets
 
 
 ## Articles on interesting dataviz
+
+These articles talk about why to use dataviz and walk through a bunch of examples on real and toy datasets.
 
 - https://www.kdnuggets.com/2017/04/value-exploratory-data-analysis.html
 - https://www.kaggle.com/pavansanagapati/a-simple-tutorial-on-exploratory-data-analysis
@@ -79,7 +87,8 @@ https://github.com/vega/vega-datasets
 - https://www.kdnuggets.com/2018/08/data-visualization-cheatsheet.html
 - https://www.kdnuggets.com/2018/09/visualising-geospatial-data-python-folium.html
 
-## Tool roundups
+
+## Dataviz tool roundups
 
 - https://www.forbes.com/sites/bernardmarr/2017/07/20/the-7-best-data-visualization-tools-in-2017/#a6d0e866c30e
 - https://www.kdnuggets.com/2018/12/machine-learning-data-visualization-deep-learning-tools.html
