@@ -29,3 +29,6 @@ altair
 vega_datasets
 notebook
 vega
+
+# Datamode
+datamode
