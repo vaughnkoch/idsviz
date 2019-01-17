@@ -6,7 +6,7 @@ from sklearn.model_selection import train_test_split
 # Dataviz
 import matplotlib.pyplot as plt
 import seaborn as sns
-import shap
+# import shap
 
 # Notebook
 from utils.notebook import in_ipynb
@@ -200,58 +200,58 @@ def show_outcome_bar_chart(Y, friendly_outcomes):
 # Note that SHAP values are sensitive to correlation. If one or more variables are correlated, their relative importance will drop compared to other variables,
 # even though a single one of them might be the most predictive compared to all other variables.
 # See https://medium.com/civis-analytics/demystifying-black-box-models-with-shap-value-analysis-3e20b536fc80
-def show_shap_analysis(clf, X, Y_true, Y_probs, downsample=500, first_n=1):
-  shap.initjs()
+# def show_shap_analysis(clf, X, Y_true, Y_probs, downsample=500, first_n=1):
+#   shap.initjs()
 
-  downsample = min(downsample, X.shape[0])
+#   downsample = min(downsample, X.shape[0])
 
-  X_dummy, X_sample, Y_dummy, Y_true_sample, Y_probs_dummy, Y_probs_sample = train_test_split(
-    X, Y_true, Y_probs,  # Initial sets
-    test_size=downsample - 1, random_state=42)
-
-
-  # Create XGBoost friendly matrix first
-  df = X_sample
-  # df = pd.DataFrame(X_sample)
-  # df.columns = pmodel.feature_names
-
-  df_outcomes = df.copy()
-  df_outcomes['outcome'] = Y_true_sample
-  df_outcomes['pyes'] = Y_probs_sample[:,1]
-
-  booster = clf.get_booster()
-  shap_values = shap.TreeExplainer(booster).shap_values(df)
-
-  # print(f'Force plot of all instances')
-  # display(shap.force_plot(shap_values, df))
-
-  print_notebook('Outcomes', heading=True)
-
-  show_histogram_of_outcomes_from_numerical(Y_probs[:,1], Y_true, 'P-values', 'Outcomes', 'P-values', threshold=0.5)
+#   X_dummy, X_sample, Y_dummy, Y_true_sample, Y_probs_dummy, Y_probs_sample = train_test_split(
+#     X, Y_true, Y_probs,  # Initial sets
+#     test_size=downsample - 1, random_state=42)
 
 
-  print_notebook('Shapley Analysis', heading=True)
+#   # Create XGBoost friendly matrix first
+#   df = X_sample
+#   # df = pd.DataFrame(X_sample)
+#   # df.columns = pmodel.feature_names
 
-  print(f'Showing shap analyis for first {first_n} instances.')
+#   df_outcomes = df.copy()
+#   df_outcomes['outcome'] = Y_true_sample
+#   df_outcomes['pyes'] = Y_probs_sample[:,1]
+
+#   booster = clf.get_booster()
+#   shap_values = shap.TreeExplainer(booster).shap_values(df)
+
+#   # print(f'Force plot of all instances')
+#   # display(shap.force_plot(shap_values, df))
+
+#   print_notebook('Outcomes', heading=True)
+
+#   show_histogram_of_outcomes_from_numerical(Y_probs[:,1], Y_true, 'P-values', 'Outcomes', 'P-values', threshold=0.5)
 
 
-  print_notebook('Shap values: https://github.com/slundberg/shap')
+#   print_notebook('Shapley Analysis', heading=True)
+
+#   print(f'Showing shap analyis for first {first_n} instances.')
 
 
-  # Using link=shap.LogitLink() will make force_plot output actual probabilities. A shap value of 0 corresponds to P
-  # Raw shap values are log-odds, so high negative values correspond to a very low P value.
-  # https://github.com/slundberg/shap/issues/29
-  for i in range(0, first_n):
-    # print(f'Shap log-odds analysis for instance {i}, true={df_outcomes.iloc[i]["outcome"]}, P(yes) = {df_outcomes.iloc[i]["pyes"]}')
-    # display( shap.force_plot(shap_values[i,:], df.iloc[i,:]) )
+#   print_notebook('Shap values: https://github.com/slundberg/shap')
 
-    print(f'Shap P-value analysis for instance {i}, true={df_outcomes.iloc[i]["outcome"]}, P(yes) = {df_outcomes.iloc[i]["pyes"]}')
-    display( shap.force_plot(shap_values[i,:], df.iloc[i,:], link=shap.LogitLink(), plot_cmap='GnPR'))
 
-  ## Summary plots
+#   # Using link=shap.LogitLink() will make force_plot output actual probabilities. A shap value of 0 corresponds to P
+#   # Raw shap values are log-odds, so high negative values correspond to a very low P value.
+#   # https://github.com/slundberg/shap/issues/29
+#   for i in range(0, first_n):
+#     # print(f'Shap log-odds analysis for instance {i}, true={df_outcomes.iloc[i]["outcome"]}, P(yes) = {df_outcomes.iloc[i]["pyes"]}')
+#     # display( shap.force_plot(shap_values[i,:], df.iloc[i,:]) )
 
-  # Summary for all outcomes
-  shap.summary_plot(shap_values, df)
+#     print(f'Shap P-value analysis for instance {i}, true={df_outcomes.iloc[i]["outcome"]}, P(yes) = {df_outcomes.iloc[i]["pyes"]}')
+#     display( shap.force_plot(shap_values[i,:], df.iloc[i,:], link=shap.LogitLink(), plot_cmap='GnPR'))
+
+#   ## Summary plots
+
+#   # Summary for all outcomes
+#   shap.summary_plot(shap_values, df)
 
 
   # Summary for binary outcomes
@@ -283,5 +283,7 @@ def show_shap_analysis(clf, X, Y_true, Y_probs, downsample=500, first_n=1):
 
 
 def show_output_dataviz(clf, X_test, Y_test, Y_probs):
-  if in_ipynb():
-    show_shap_analysis(clf, X_test, Y_test, Y_probs)
+  pass
+
+  # if in_ipynb():
+  #   show_shap_analysis(clf, X_test, Y_test, Y_probs)
