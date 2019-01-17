@@ -7,7 +7,7 @@ xgboost
 # Graphics/dataviz
 matplotlib
 scikit-plot
-shap
+shap==0.18.1
 iml
 seaborn  # Useful in Jupyter, requires ipython imports
 
